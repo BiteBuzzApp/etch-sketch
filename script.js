@@ -39,12 +39,13 @@ clear.style.margin = "auto";
 clear.style.display = "block"
 document.body.appendChild(clear);
 
+//make the grid
 function createGrid(squaresPerSide){
     const squarePercent = 100 / squaresPerSide;
     const totalSquares = squaresPerSide * squaresPerSide;
     grid.textContent = ""
 
-    for (i = 0; i < totalSquares; i++){
+    for (let i = 0; i < totalSquares; i++){
         const square = document.createElement("div");
         square.style.width = `${squarePercent}%` ;
         square.style.height = `${squarePercent}%` ;
@@ -67,5 +68,7 @@ function randomRGB(){
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
 
-    return `rgb(${r}, ${g}, ${b}`
+    return `rgb(${r}, ${g}, ${b})`
 }
+
+createGrid(16)
