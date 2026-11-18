@@ -53,9 +53,19 @@ function createGrid(squaresPerSide){
         square.style.boxSizing = "border-box"
 
         square.addEventListener("mouseenter", () => {
-            square.style.backgroundColor = "black"
+            square.style.backgroundColor = randomRGB()
         })
 
         grid.appendChild(square)
     }
+}
+
+
+//random colors
+function randomRGB(){
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    return `rgb(${r}, ${g}, ${b}`
 }
