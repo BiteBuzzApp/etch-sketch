@@ -3,8 +3,19 @@ const grid = document.querySelector(".container")
 
 //prompt to get grid size
 function gridSize(){
-    let answer = prompt("How many squares per side?");
-    createGrid(answer)
+    let input = prompt("How many squares per side? (1 - 100)");
+
+    if (input === null) return;
+
+    let answer = Number(input);
+
+    if (answer > 0 && answer < 101) {
+        createGrid(answer)
+    }
+    
+    else {
+        gridSize()
+    }
 }
 
 //button to resize
