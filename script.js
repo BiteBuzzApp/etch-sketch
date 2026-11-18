@@ -15,7 +15,18 @@ size.style.margin = "auto";
 size.style.display = "block"
 document.body.appendChild(size);
 
-
+//button to clear
+const clear = document.createElement("button");
+clear.addEventListener("click", () => {
+    const allSquares = document.querySelectorAll(".square")
+    allSquares.forEach((square) => {
+        square.style.backgroundColor = "transparent"
+    })
+});
+clear.textContent = "Clear";
+clear.style.margin = "auto";
+clear.style.display = "block"
+document.body.appendChild(clear);
 
 function createGrid(squaresPerSide){
     const squarePercent = 100 / squaresPerSide;
