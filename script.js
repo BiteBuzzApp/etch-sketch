@@ -9,7 +9,11 @@ function gridSize(){
 
     let answer = Number(input);
 
-    if (answer > 0 && answer < 101) {
+    if (Number.isInteger(answer) === false){
+        gridSize()
+    }
+
+    else if (answer > 0 && answer < 101) {
         createGrid(answer)
     }
     
